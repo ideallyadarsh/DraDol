@@ -33,6 +33,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flare_flutter: ^2.0.5
+  lottie: ^0.4.1
+ 
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -49,6 +53,15 @@ flutter:
   assets:
     - 'successful.mp3'
     - 'assets/success.gif'
+    - 'assets/splash 1.flr'
+    - 'assets/4659-avocad-bros.json'
+    - 'assets/25172-pencil-loader.json'
+    - 'assets/25578-letter-l.json'
+    - 'assets/25646-numag-color-copy.json'
+    - 'assets/27451-lock-action.json'
+      
+      
+      
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
