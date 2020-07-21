@@ -4,6 +4,7 @@ import 'package:kidsgame/colmatch.dart';
 import 'package:kidsgame/symbols.dart';
 import 'package:kidsgame/wordmatch.dart';
 import 'package:lottie/lottie.dart';
+import 'poemlist.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -73,6 +74,47 @@ class Home extends StatelessWidget {
                           child: Lottie.asset('assets/4659-avocad-bros.json'),
                           onPressed: () => Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) => Game())),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: height / 2,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.teal),
+                        ),
+                        child: FlatButton(
+                          child:
+                              Lottie.asset('assets/25172-pencil-loader.json'),
+                          onPressed: () => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => Symbols()),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: height / 2,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.teal),
+                        ),
+                        child: FlatButton(
+                          child: Lottie.asset('assets/8060-headphone.json'),
+                          onPressed: () => Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Poemlist())),
                         ),
                       ),
                     ),
