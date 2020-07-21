@@ -5,6 +5,7 @@ import 'package:kidsgame/colmatch.dart';
 import 'package:kidsgame/symbols.dart';
 import 'package:kidsgame/wordmatch.dart';
 import 'package:lottie/lottie.dart';
+import 'poemlist.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -164,13 +165,13 @@ class Home extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Lottie.asset('assets/25578-letter-l.json'),
+                            Lottie.asset('assets/8060-headphone.json'),
                             FlatButton(
                               shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(10)),
-                              child: Text("Word Match"),
+                              child: Text("Poems"),
                               onPressed: () => Navigator.push(context,
                                   MaterialPageRoute(
-                                      builder: (context) => Wordgame())),
+                                      builder: (context) => Poemlist())),
                             ),
                           ],
                         ),

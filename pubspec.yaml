@@ -35,6 +35,7 @@ dev_dependencies:
     sdk: flutter
   flare_flutter: ^2.0.5
   lottie: ^0.4.1
+  youtube_player_flutter: ^7.0.0+7
  
 
 
@@ -53,10 +54,6 @@ flutter:
   assets:
     - 'successful.mp3'
     - 'assets/'
-
-      
-      
-      
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
