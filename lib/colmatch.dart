@@ -27,8 +27,11 @@ class _GameState extends State<Game> {
   AudioCache _audioCache = AudioCache();
   @override
   Widget build(BuildContext context) {
+    double height =MediaQuery.of(context).size.height;
+    height=height-200;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pink,
         centerTitle: true,
         title:Row(
             mainAxisSize: MainAxisSize.min, children: [
@@ -42,7 +45,7 @@ class _GameState extends State<Game> {
             Text("Match The Fruit With the Color",style: TextStyle(fontSize: 20,color: Colors.black),),
             SizedBox(height: 5,),
             Text("Your Score:${score.length}/10",style: TextStyle(fontSize: 30,color: Colors.black),),
-            SizedBox(height: 40,),
+            SizedBox(height: 30,),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -58,6 +61,7 @@ class _GameState extends State<Game> {
                       );
                     }).toList()..shuffle(Random(seed+3)),
                 ),
+                SizedBox(width: 15,),
                 Column(mainAxisAlignment: MainAxisAlignment.spaceAround,crossAxisAlignment: CrossAxisAlignment.start,
                   children:
                   choices.keys.map((emoji) => buildDragTarget(emoji)).toList()..shuffle(Random(seed)),
@@ -67,7 +71,10 @@ class _GameState extends State<Game> {
           ],
         ),
       ) ,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.pink,
         child: Icon(Icons.refresh),
         onPressed: (){setState(() {
           score.clear();
@@ -79,17 +86,25 @@ class _GameState extends State<Game> {
   Widget buildDragTarget(emoji){
     return DragTarget<String>(
       builder: (BuildContext context,List<String> incoming,List rejected){
+        double height =MediaQuery.of(context).size.height;
+        height=height-200;
         if(score[emoji]==true){
-          return Container(
-            color: Colors.transparent,
-            child: Text("Correct",style: TextStyle(color: Colors.green,fontSize: 18,fontWeight: FontWeight.bold)),
-            alignment: Alignment.center,
-            height: 55,
-            width:175,
+          return Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Container(
+              color: Colors.transparent,
+              child: Text("Correct",style: TextStyle(color: Colors.green,fontSize: 18,fontWeight: FontWeight.bold)),
+              alignment: Alignment.center,
+              height: height/12,
+              width:140,
+            ),
           );
         }
         else{
-          return Container(color: choices[emoji],height: 55, width:175,);
+          return Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Container(color: choices[emoji],height: height/12 - 2, width:145,),
+          );
         }
       },
       onWillAccept: (data)=>data==emoji,
@@ -111,12 +126,17 @@ class Emoji extends StatelessWidget {
   final String emoji;
   @override
   Widget build(BuildContext context) {
+    double height =MediaQuery.of(context).size.height;
+    height=height-200;
     return Material(
       color: Colors.transparent,
-      child:Container(
-        alignment: Alignment.center,
-        height: 55,
-        child: Text(emoji,style: TextStyle(color: Colors.black,fontSize: 30),),
+      child:Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Container(
+          alignment: Alignment.center,
+          height: height/12  - 2,
+          child: Text(emoji,style: TextStyle(color: Colors.black,fontSize: 30),),
+        ),
       ),
     );
   }

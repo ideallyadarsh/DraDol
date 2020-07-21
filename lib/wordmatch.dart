@@ -37,7 +37,6 @@ class _WordgameState extends State<Wordgame> {
         '🍓':'Strawberry',
       };
     String level ='I';
-
     int seed=0;
     AudioCache _audioCache =AudioCache();
 
@@ -53,7 +52,8 @@ class _WordgameState extends State<Wordgame> {
           IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home())),),
           SizedBox(width: 10,),
           Text("Word Match $level",style: TextStyle(color: Colors.white),),]),
-      ),      body: SingleChildScrollView(
+         ),
+      body: SingleChildScrollView(
         child: Column(children: [
           SizedBox(height: 10,),
           Text("Match The Item With the Color",style: TextStyle(fontSize: 20,color: Colors.black),),
@@ -83,8 +83,7 @@ class _WordgameState extends State<Wordgame> {
         ),
       ),
 
-floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-
+         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
          floatingActionButton:FloatingActionButton(
           tooltip: "Refresh",
           child: Icon(Icons.refresh),
@@ -138,7 +137,6 @@ floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
   dialogue(BuildContext context){
     return showDialog(
         context: context,builder: (BuildContext context){
-
       return AlertDialog(
         title: Text("Score=10/10",textAlign: TextAlign.center,),
         actions: [
@@ -165,8 +163,6 @@ floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     }
     );
   }
-
-
 }
 
 Widget display(BuildContext context,emoji){

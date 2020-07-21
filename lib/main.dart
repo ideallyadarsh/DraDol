@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kidsgame/home.dart';
-
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -26,21 +25,28 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
-  void initState() {
+  void initState(){
     super.initState();
-
-    Future.delayed(
-        Duration(seconds: 5),
-        () => Navigator.pushReplacement(
-            context, new MaterialPageRoute(builder: (context) => Home())));
+    Timer(
+        Duration(seconds: 6), () => Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => Home()))
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-      margin: EdgeInsets.only(top: 70),
-      child: Lottie.asset('assets/27451-lock-action.json'),
-    ));
+    return Scaffold(backgroundColor: Colors.black,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(color: Colors.transparent,
+               child: Lottie.asset('assets/splash.json'),
+               ),
+              Text("Dradol",style: TextStyle(fontSize: 35,color: Colors.tealAccent,fontWeight: FontWeight.bold,fontFamily: "Pacifico"),),
+              Text("Drag Drop Learn",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold,fontFamily: "Lobster"))
+            ],
+          ),
+        ),
+    );
   }
 }

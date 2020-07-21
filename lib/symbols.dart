@@ -15,15 +15,17 @@ class _SymbolsState extends State<Symbols> {
     '▬': 'Rectangle',
     '▲': 'Triangle',
     '●': 'Circle',
-    '◚': 'Semi Circle',
+    '◗': 'Semi Circle',
     '◆': 'Diamond',
     '♥': 'Heart',
     '★': 'Star',
+    '⬠':'Pentagon',
+    '⬡':'Hexagon',
   };
 
   String level = 'I';
 
-  int seed = 0;
+  int seed = 2;
   AudioCache _audioCache = AudioCache();
 
   @override
@@ -32,10 +34,11 @@ class _SymbolsState extends State<Symbols> {
     height = height - 200;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pink,
         centerTitle: true,
         title: Row(mainAxisSize: MainAxisSize.min, children: [
           IconButton(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home,size: 30,),
             onPressed: () => Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => Home())),
           ),
@@ -62,7 +65,7 @@ class _SymbolsState extends State<Symbols> {
               height: 5,
             ),
             Text(
-              "Your Score:${score.length}/8",
+              "Your Score:${score.length}/10",
               style: TextStyle(fontSize: 30, color: Colors.black),
             ),
             SizedBox(
@@ -77,8 +80,7 @@ class _SymbolsState extends State<Symbols> {
                   children: word.keys.map((words) {
                     return Draggable<String>(
                       data: words,
-                      child:
-                          display(context, score[words] == true ? '✔' : words),
+                      child: display(context, score[words] == true ? '✔' : words),
                       feedback: display(context, words),
                       childWhenDragging: display(context, '🤔'),
                     );
@@ -100,6 +102,7 @@ class _SymbolsState extends State<Symbols> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         tooltip: "Refresh",
+        backgroundColor: Colors.pink,
         child: Icon(Icons.refresh),
         onPressed: () {
           setState(() {
@@ -118,7 +121,7 @@ class _SymbolsState extends State<Symbols> {
         height = height - 200;
         if (score[words] == true) {
           return Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(3.0),
             child: Container(
               color: Colors.transparent,
               child: Text(
@@ -129,20 +132,20 @@ class _SymbolsState extends State<Symbols> {
                     fontWeight: FontWeight.bold),
               ),
               alignment: Alignment.centerRight,
-              height: height / 9,
+              height: height / 12,
               width: 150,
             ),
           );
         } else {
           return Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(3.0),
             child: Container(
               alignment: Alignment.centerRight,
               child: Text(
                 word[words],
-                style: TextStyle(fontSize: 17),
+                style: TextStyle(fontSize: 19),
               ),
-              height: height / 9,
+              height: height / 12,
               width: 150,
             ),
           );
@@ -153,7 +156,7 @@ class _SymbolsState extends State<Symbols> {
         print(data);
         setState(() {
           score[words] = true;
-          if (score.length == 8) {
+          if (score.length == 10) {
             dialogue(context);
           }
         });
@@ -169,7 +172,7 @@ class _SymbolsState extends State<Symbols> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(
-              "Score=8/8",
+              "Score=10/10",
               textAlign: TextAlign.center,
             ),
             actions: [
@@ -196,13 +199,11 @@ Widget display(BuildContext context, emoji) {
   height = height - 200;
   return Material(
     child: Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(3.0),
       child: Container(
         alignment: Alignment.center,
-        height: height / 9,
-        child: Text(
-          emoji,
-          style: TextStyle(color: Colors.black, fontSize: 25),
+        height: height / 12,
+        child: Text(emoji, style: TextStyle(color: Colors.black, fontSize: 35),
         ),
       ),
     ),
