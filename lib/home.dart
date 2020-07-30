@@ -3,9 +3,11 @@ import 'package:kidsgame/Numbers.dart';
 import 'package:kidsgame/colors.dart';
 import 'package:kidsgame/colmatch.dart';
 import 'package:kidsgame/memorygame.dart';
+import 'package:kidsgame/poemlist.dart';
 import 'package:kidsgame/symbols.dart';
 import 'package:kidsgame/wordmatch.dart';
 import 'package:lottie/lottie.dart';
+import './Poem/intro.dart';
 
 import 'memorygame.dart';
 
@@ -199,7 +201,7 @@ class Home extends StatelessWidget {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Memorygame())),
+                                    builder: (context) => Poemslist())),
                           ),
                         ],
                       ),
