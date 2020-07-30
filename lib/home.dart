@@ -201,7 +201,7 @@ class Home extends StatelessWidget {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Poemslist())),
+                                    builder: (context) => Memorygame())),
                           ),
                         ],
                       ),
