@@ -14,10 +14,10 @@ class _SymbolsState extends State<Symbols> {
     '■': 'Square',
     '▬': 'Rectangle',
     '▲': 'Triangle',
-    '●': 'Circle',
+    '⚫': 'Circle',
     '◗': 'Semi Circle',
     '◆': 'Diamond',
-    '♥': 'Heart',
+    '🖤': 'Heart',
     '★': 'Star',
     '⬠':'Pentagon',
     '⬡':'Hexagon',
@@ -64,10 +64,11 @@ class _SymbolsState extends State<Symbols> {
             SizedBox(
               height: 5,
             ),
-            Text(
-              "Your Score:${score.length}/10",
-              style: TextStyle(fontSize: 30, color: Colors.black),
-            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text("Score: ", style: TextStyle(fontFamily: "Pacifico",fontSize: 20, color: Colors.red),),
+                Text("${score.length}", style: TextStyle(fontFamily: "Lobster",fontSize: 35, color: Colors.green),),
+                Text(" /10", style: TextStyle(fontSize: 20, color: Colors.black),),
+              ],),
             SizedBox(
               height: 30,
             ),
@@ -203,7 +204,7 @@ Widget display(BuildContext context, emoji) {
       child: Container(
         alignment: Alignment.center,
         height: height / 12,
-        child: Text(emoji, style: TextStyle(color: Colors.black, fontSize: 35),
+        child: Text(emoji, style: TextStyle(fontFamily: 'Pacifico',color: Colors.black, fontSize: 20),
         ),
       ),
     ),

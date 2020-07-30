@@ -1,5 +1,4 @@
-import 'tilemodel.dart';
-
+import 'package:kidsgame/memoryGame/tilemodel.dart';
 String selectedTile = "";
 int selectedIndex;
 bool selected = true;

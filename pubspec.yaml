@@ -35,7 +35,7 @@ dev_dependencies:
     sdk: flutter
   flare_flutter: ^2.0.5
   lottie: ^0.4.1
-  youtube_player_flutter: ^7.0.0+7
+
  
 
 

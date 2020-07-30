@@ -28,7 +28,7 @@ class _SplashState extends State<Splash> {
   void initState(){
     super.initState();
     Timer(
-        Duration(seconds: 6), () => Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => Home()))
+        Duration(seconds: 4), () => Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => Home()))
     );
   }
 
@@ -42,7 +42,7 @@ class _SplashState extends State<Splash> {
               Container(color: Colors.transparent,
                child: Lottie.asset('assets/splash.json'),
                ),
-              Text("Dradol",style: TextStyle(fontSize: 35,color: Colors.tealAccent,fontWeight: FontWeight.bold,fontFamily: "Pacifico"),),
+              Text("DraDol",style: TextStyle(fontSize: 35,color: Colors.tealAccent,fontWeight: FontWeight.bold,fontFamily: "Pacifico"),),
               Text("Drag Drop Learn",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold,fontFamily: "Lobster"))
             ],
           ),

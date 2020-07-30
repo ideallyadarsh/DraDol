@@ -58,8 +58,11 @@ class _WordgameState extends State<Wordgame> {
           SizedBox(height: 10,),
           Text("Match The Item With the Color",style: TextStyle(fontSize: 20,color: Colors.black),),
           SizedBox(height: 5,),
-          Text("Your Score:${score.length}/10",style: TextStyle(fontSize: 30,color: Colors.black),),
-          SizedBox(height: 30,),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text("Score: ", style: TextStyle(fontFamily: "Pacifico",fontSize: 20, color: Colors.red),),
+              Text("${score.length}", style: TextStyle(fontFamily: "Lobster",fontSize: 35, color: Colors.green),),
+              Text(" /10", style: TextStyle(fontSize: 20, color: Colors.black),),
+            ],),SizedBox(height: 30,),
           Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
             Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -174,7 +177,7 @@ Widget display(BuildContext context,emoji){
       child: Container(
         alignment: Alignment.center,
         height: height/12,
-        child: Text(emoji,style: TextStyle(color: Colors.black,fontSize: 25),),
+        child: Text(emoji,style: TextStyle(fontFamily: 'Pacifico',color: Colors.black, fontSize: 20),),
       ),
     ),
   );
