@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:kidsgame/home.dart';
+import 'home.dart';
 
 class ColorGame extends StatefulWidget {
   @override

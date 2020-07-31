@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:kidsgame/home.dart';
+import 'home.dart';
 
 class Symbols extends StatefulWidget {
   @override
@@ -39,16 +39,9 @@ class _SymbolsState extends State<Symbols> {
         title: Row(mainAxisSize: MainAxisSize.min, children: [
           IconButton(
             icon: Icon(Icons.home,size: 30,),
-            onPressed: () => Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => Home())),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Text(
-            "Symbol Match ",
-            style: TextStyle(color: Colors.white),
-          ),
+            onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home())),),
+          SizedBox(width: 10,),
+          Text("Symbol Match ", style: TextStyle(color: Colors.white),),
         ]),
       ),
       body: SingleChildScrollView(

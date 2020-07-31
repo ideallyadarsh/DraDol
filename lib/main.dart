@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kidsgame/home.dart';
+import 'home.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {

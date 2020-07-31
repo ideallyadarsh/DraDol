@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kidsgame/home.dart';
+import 'package:DraDol/home.dart';
 import 'tilemodel.dart';
-import 'package:kidsgame/memoryGame/data.dart';
+import 'data.dart';
 import 'dart:async';
 
 class Memorygame extends StatefulWidget {

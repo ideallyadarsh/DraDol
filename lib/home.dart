@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:kidsgame/animations/pageAnimation.dart';
-import 'package:kidsgame/maths/Numbers.dart';
-import 'package:kidsgame/colors.dart';
-import 'package:kidsgame/colmatch.dart';
-import 'package:kidsgame/memoryGame/memorygame.dart';
-import 'package:kidsgame/symbols.dart';
-import 'package:kidsgame/wordmatch.dart';
+import 'animations/pageAnimation.dart';
+import 'maths/Numbers.dart';
+import 'colors.dart';
+import 'colmatch.dart';
+import 'memoryGame/memorygame.dart';
+import 'symbols.dart';
+import 'wordmatch.dart';
 import 'package:lottie/lottie.dart';
+import './Poem/intro.dart';
 
 
 class Home extends StatefulWidget {
@@ -150,7 +151,7 @@ class _HomeState extends State<Home> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Lottie.asset('assets/25646-numag-color-copy.json'),
+                            Lottie.asset('assets/numbers.json'),
                             SizedBox(height:10),
                             FlatButton(
                               shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(10)),
@@ -178,15 +179,66 @@ class _HomeState extends State<Home> {
                             Lottie.asset('assets/8060-headphone.json'),
                             FlatButton(
                               shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(10)),
-                              child: Text("Memory Game"),
-                              onPressed: () => Navigator.pushReplacement(context, pageAnimation(pageName:Memorygame())),
+                              child: Text("Poems"),
+                              onPressed: () => Navigator.pushReplacement(context, pageAnimation(pageName:Poemslist())),
                             ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                ])
+                ]),
+              Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: height / 2,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border.all(color: Colors.teal),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Lottie.asset('assets/memory.json'),
+                            SizedBox(height:10),
+                            FlatButton(
+                              shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(10)),
+                              child: Text("Memory Game"),
+                              onPressed: () => Navigator.pushReplacement(context,pageAnimation(pageName:Memorygame())),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: height / 2,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border.all(color: Colors.teal),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Lottie.asset('assets/25578-letter-l.json'),
+                            FlatButton(
+                              shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(10)),
+                              child: Text("Word Match"),
+                              onPressed: () => Navigator.pushReplacement(context,pageAnimation(pageName:Wordgame())),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
               ],
             ),
         ),

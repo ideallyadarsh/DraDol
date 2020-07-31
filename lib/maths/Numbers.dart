@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:kidsgame/home.dart';
+import 'package:DraDol/home.dart';
 
 class Numbers extends StatefulWidget {
   @override
@@ -44,7 +44,7 @@ class _NumbersState extends State<Numbers> {
             width: 10,
           ),
           Text(
-            "Symbol Match ",
+            "Number Match ",
             style: TextStyle(fontFamily: "Lobster",color: Colors.white),
           ),
         ]),
