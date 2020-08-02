@@ -40,6 +40,7 @@ class _AfterintroState extends State<Afterintro> {
 
   @override
   Widget build(BuildContext context) {
+    double height=MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.pink,
       appBar: AppBar(
@@ -57,7 +58,7 @@ class _AfterintroState extends State<Afterintro> {
               children: <Widget>[
                   Container(
                     child: Hero(tag:widget.id,
-                        child: Lottie.asset("assets/${widget.id}ani.json",fit: BoxFit.fitWidth)),
+                        child: Lottie.asset("assets/${widget.id}ani.json",height: height/2,width: double.maxFinite)),
                   ),
                 SizedBox(height: 20,),
                 Container(
