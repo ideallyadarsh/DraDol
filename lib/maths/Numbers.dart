@@ -178,51 +178,52 @@ class _NumbersState extends State<Numbers> {
             ),
             actions: [
               Column(
-                children: [
-                  Image.asset("assets/success.gif"),
-                  FlatButton(
-                      color: Colors.pink,
-                      child: i<10?Text("Next Level"):Text("Completed!"),
-                      onPressed: () {
-                          print("Set state dialogue");
-                          if(i<10){
-                            switch(i){
-                              case 1:{setState(() {level='II';word=word1;score.clear();});
-                              } break;
-                              case 2:{setState(() {
-                                score.clear();level='III';word=word2;
-                              });}break;
-                              case 3:{setState(() {
-                                level='IV';score.clear();word=word3;
-                              });}break;
-                              case 4:{setState(() {
-                                level='V';word=word4;score.clear();
-                              });}break;
-                              case 5:{setState(() {
-                                level='VI';word=word5;score.clear();
-                              });}break;
-                              case 6:{setState(() {
-                                word=word6;level='VII';score.clear();
-                              });}break;
-                              case 7:{setState(() {
-                                score.clear();word=word7;level='VIII';
-                              });}break;
-                              case 8:{setState(() {
-                                score.clear();word=word8;level='IX';
-                              });}break;
-                              case 9:{setState(() {
-                                score.clear();word=word9;level='X';
-                              });}break;
-                              default:break;
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Center(child: Image.asset("assets/success.gif")),
+                    FlatButton(
+                        color: Colors.pink,
+                        child: i<10?Text("Next Level"):Text("Completed!"),
+                        onPressed: () {
+                            print("Set state dialogue");
+                            if(i<10){
+                              switch(i){
+                                case 1:{setState(() {level='II';word=word1;score.clear();});
+                                } break;
+                                case 2:{setState(() {
+                                  score.clear();level='III';word=word2;
+                                });}break;
+                                case 3:{setState(() {
+                                  level='IV';score.clear();word=word3;
+                                });}break;
+                                case 4:{setState(() {
+                                  level='V';word=word4;score.clear();
+                                });}break;
+                                case 5:{setState(() {
+                                  level='VI';word=word5;score.clear();
+                                });}break;
+                                case 6:{setState(() {
+                                  word=word6;level='VII';score.clear();
+                                });}break;
+                                case 7:{setState(() {
+                                  score.clear();word=word7;level='VIII';
+                                });}break;
+                                case 8:{setState(() {
+                                  score.clear();word=word8;level='IX';
+                                });}break;
+                                case 9:{setState(() {
+                                  score.clear();word=word9;level='X';
+                                });}break;
+                                default:break;
+                              }
+                              Navigator.pop(context);
                             }
-                            Navigator.pop(context);
-                          }
-                        else
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home()));
-                      }
-                      ),
-                ],
-              ),
+                          else{Navigator.pop(context);Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home()));}
+
+                        }
+                        ),
+                  ],
+                ),
             ],
           );
         });

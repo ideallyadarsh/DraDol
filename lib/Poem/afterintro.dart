@@ -55,14 +55,13 @@ class _AfterintroState extends State<Afterintro> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 10,),
                   Container(
                     child: Hero(tag:widget.id,
                         child: Lottie.asset("assets/${widget.id}ani.json",fit: BoxFit.fitWidth)),
                   ),
                 SizedBox(height: 20,),
                 Container(
-                  margin: EdgeInsets.only(left: 40),
+                  margin: EdgeInsets.only(left:10),
                   child: AnimatedSwitcher(
                       duration: const Duration(milliseconds: 900),
                       child: Text(

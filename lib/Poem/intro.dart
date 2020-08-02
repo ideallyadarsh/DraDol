@@ -190,7 +190,7 @@ class Poemslist extends StatelessWidget {
           itemCount: mylist.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(1.0),
+              padding: const EdgeInsets.only(left: 5,right: 5),
                 child: Container(
                   height: MediaQuery.of(context).size.height/9,
                   child: ListTile(
@@ -200,7 +200,7 @@ class Poemslist extends StatelessWidget {
                               id: mylist[index].id,
                              title: mylist[index].name,
                             ))),
-                    title: Text(mylist[index].name,style: TextStyle(letterSpacing: 1.3,color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold,fontFamily: "Lobster")),
+                    title: Text(mylist[index].name,style: TextStyle(letterSpacing: 1.3,color: Colors.black,fontSize: 19,fontFamily: "Lobster")),
                     leading: Hero(tag: mylist[index].id,
                         child: Lottie.asset('assets/${mylist[index].id}ani.json',fit: BoxFit.fitHeight ),
                     )

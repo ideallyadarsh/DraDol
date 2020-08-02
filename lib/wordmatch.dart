@@ -144,23 +144,26 @@ class _WordgameState extends State<Wordgame> {
         title: Text("Score=10/10",textAlign: TextAlign.center,),
         actions: [
           Column(
-            children: [
-              Image.asset("assets/success.gif"),
-              FlatButton(color: Colors.pink,child: Text("Next Level"),
-                  onPressed: (){
-                if(game==false){
-                  setState(() {
-                    word=word2;
-                    level='II';
-                    game=true;
-                    score.clear();
-                  });
-                  Navigator.pop(context);
-                }
-                else{Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));}
-                  }),
-            ],
-          ),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(child: Image.asset("assets/success.gif")),
+                FlatButton(color: Colors.pink,child: Text("Next Level"),
+                    onPressed: (){
+                  if(game==false){
+                    setState(() {
+                      word=word2;
+                      level='II';
+                      game=true;
+                      score.clear();
+                    });
+                    Navigator.pop(context);
+                  }
+                  else{Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));}
+                Navigator.pop(context);
+                }),
+              ],
+            ),
+
         ],
       );
     }

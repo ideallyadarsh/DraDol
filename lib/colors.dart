@@ -150,15 +150,17 @@ dialogue(BuildContext context){
       context: context,builder: (BuildContext context){
     return AlertDialog(
       title: Text("Score=10/10",textAlign: TextAlign.center,),
+
       actions: [
         Column(
-          children: [
-            Image.asset("assets/success.gif"),
-            FlatButton(color: Colors.pink,child: Text("Next ColorGame"),
-                onPressed: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()))
-            )
-          ],
-        ),
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+               Image.asset("assets/success.gif"),
+              FlatButton(color: Colors.pink,child: Text("Next ColorGame"),
+                  onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+                  Navigator.pop(context);})
+            ],
+          ),
       ],
     );
   }

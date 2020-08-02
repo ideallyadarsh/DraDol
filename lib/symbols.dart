@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'home.dart';
@@ -170,18 +171,19 @@ class _SymbolsState extends State<Symbols> {
               textAlign: TextAlign.center,
             ),
             actions: [
-              Column(
-                children: [
-                  Image.asset("assets/success.gif"),
-                  FlatButton(
-                      color: Colors.pink,
-                      child: Text("Next Level"),
-                      onPressed: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Home()));
-                      }),
-                ],
-              ),
+                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Center(child: Image.asset("assets/success.gif")),
+                    FlatButton(
+                        color: Colors.pink,
+                        child: Text("Next Level"),
+                        onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+                        Navigator.pop(context);}
+                    ),
+                  ],
+                ),
+
             ],
           );
         });

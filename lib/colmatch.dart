@@ -153,13 +153,16 @@ class Emoji extends StatelessWidget {
         title: Text("Score=10/10",textAlign: TextAlign.center,),
         actions: [
           Column(
-            children: [
-              Image.asset("assets/success.gif"),
-              FlatButton(color: Colors.pink,child: Text("Next Game"),
-                onPressed: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()))
-              )
-            ],
-          ),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(child: Image.asset("assets/success.gif")),
+                FlatButton(color: Colors.pink,child: Text("Next Game"),
+                  onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+                Navigator.pop(context);}
+
+                )
+              ],
+            ),
         ],
       );
     }
