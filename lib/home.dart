@@ -106,7 +106,7 @@ Widget blocks(BuildContext context,String label,String imgUrl,Widget page){
           FlatButton(
             shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blue,width: 2.5),borderRadius: BorderRadius.circular(10)),
             child: Text(label,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
-            onPressed: () => Navigator.pushReplacement(context,pageAnimation(pageName:page)),
+            onPressed: () => Navigator.push(context,pageAnimation(pageName:page)),
           ),
         ],
       ),

@@ -12,7 +12,7 @@ class Memorygame extends StatefulWidget {
 class _MemorygameState extends State<Memorygame> {
   List<TileModel> gridViewTiles = List<TileModel>();
   List<TileModel> questionPairs = List<TileModel>();
-
+  String title="Remember the Pair Positions";
   @override
   void initState() {
     // TODO: implement initState
@@ -28,6 +28,7 @@ class _MemorygameState extends State<Memorygame> {
     Future.delayed(const Duration(seconds: 10), () {
 // Here you can write your code
       setState(() {
+        title="Start Finding the pairs";
         print("2 seconds done");
         questionPairs = getQuestionPairs();
         gridViewTiles = questionPairs;
@@ -40,35 +41,35 @@ class _MemorygameState extends State<Memorygame> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.pink,
+        centerTitle: true,
+        title: Text("Memory ", style: TextStyle(fontFamily: "Lobster",color: Colors.white),),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             child: Column(
               children: <Widget>[
+                Text(points!=800?title:" ",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                 SizedBox(
-                  height: 40,
+                  height: 15,
                 ),
                 points != 800
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Text(
-                            "$points/800",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                          Text(
-                            "Points",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w300),
-                          ),
+                          Row(mainAxisAlignment: MainAxisAlignment.center,
+                            children: [Text("Score: ", style: TextStyle(fontFamily: "Pacifico",fontSize: 20, color: Colors.red),),
+                              Text("$points", style: TextStyle(fontFamily: "Lobster",fontSize: 35, color: Colors.green),),
+                              Text(" /800", style: TextStyle(fontSize: 20, color: Colors.black),),
+                            ],),
                         ],
                       )
                     : Container(),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 points != 800
                     ? GridView(
@@ -100,7 +101,13 @@ class _MemorygameState extends State<Memorygame> {
                               width: 200,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: Colors.blue,
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Colors.pinkAccent,Colors.blueAccent
+                                  ]
+                                ),
                                 borderRadius: BorderRadius.circular(24),
                               ),
                               child: Text(
@@ -128,7 +135,7 @@ class _MemorygameState extends State<Memorygame> {
                                 borderRadius: BorderRadius.circular(24),
                               ),
                               child: FlatButton(
-                                onPressed:()=> Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context)=>Home())),
+                                onPressed:()=> Navigator.pop(context),
                                 child: Text(
                                   "Home",
                                   style: TextStyle(
@@ -234,7 +241,7 @@ class _TileState extends State<Tile> {
                   padding: const EdgeInsets.all(12.0),
                   child: Container(
                       color: Colors.white,
-                      child: Text("✔",style: TextStyle(fontSize: 25),),
+                      child: Text("✔",style: TextStyle(color: Colors.green,fontSize: 25),),
                     ),
                 ),
               ),

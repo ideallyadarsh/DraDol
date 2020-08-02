@@ -1,3 +1,5 @@
+import 'package:DraDol/Poem/intro.dart';
+import 'package:DraDol/animations/pageAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'dart:async';
@@ -27,7 +29,8 @@ class _AfterintroState extends State<Afterintro> {
       }
       if (index == widget.lines.length - 1) {
         timer.cancel();
-        print('done');
+        Timer(Duration(seconds: 3),()=>Navigator.pushReplacement(context, pageAnimation(pageName:Poemslist())));
+
       }
     });
   }
@@ -74,7 +77,7 @@ class _AfterintroState extends State<Afterintro> {
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
                         ),
-                      )),
+                      ),),
                 ),
               ],
             ),
