@@ -181,7 +181,7 @@ class Poemslist extends StatelessWidget {
           backgroundColor: Colors.pink,
           centerTitle: true,
           title: Row(mainAxisSize: MainAxisSize.min, children: [
-            IconButton(icon: Icon(Icons.home,size: 30,), onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home())),),
+            IconButton(icon: Icon(Icons.home,size: 30,), onPressed: () => Navigator.pop(context),),
             SizedBox(width: 10,),
             Text("Poems", style: TextStyle(color: Colors.white),),
           ]),

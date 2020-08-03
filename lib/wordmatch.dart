@@ -46,10 +46,11 @@ class _WordgameState extends State<Wordgame> {
     height=height-200;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pinkAccent,
         centerTitle: true,
         title:Row(
             mainAxisSize: MainAxisSize.min, children: [
-          IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home())),),
+          IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pop(context),),
           SizedBox(width: 10,),
           Text("Word Match $level",style: TextStyle(color: Colors.white),),]),
          ),
@@ -141,12 +142,15 @@ class _WordgameState extends State<Wordgame> {
     return showDialog(
         context: context,builder: (BuildContext context){
       return AlertDialog(
+
         title: Text("Score=10/10",textAlign: TextAlign.center,),
+        actionsPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+        elevation: 2,
         actions: [
           Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(child: Image.asset("assets/success.gif")),
+                Image.asset("assets/success.gif"),
                 FlatButton(color: Colors.pink,child: Text("Next Level"),
                     onPressed: (){
                   if(game==false){
@@ -156,9 +160,9 @@ class _WordgameState extends State<Wordgame> {
                       game=true;
                       score.clear();
                     });
-                    Navigator.pop(context);
                   }
-                  else{Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));}
+                  else{Navigator.pop(context);
+                  Navigator.pop(context);}
                 Navigator.pop(context);
                 }),
               ],

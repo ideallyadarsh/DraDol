@@ -37,8 +37,7 @@ class _NumbersState extends State<Numbers> {
         title: Row(mainAxisSize: MainAxisSize.min, children: [
           IconButton(
             icon: Icon(Icons.home,size: 30,),
-            onPressed: () => Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => Home())),
+            onPressed: () => Navigator.pop(context),
           ),
           SizedBox(
             width: 10,
@@ -218,7 +217,8 @@ class _NumbersState extends State<Numbers> {
                               }
                               Navigator.pop(context);
                             }
-                          else{Navigator.pop(context);Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home()));}
+                          else{Navigator.pop(context);
+                            Navigator.pop(context);}
 
                         }
                         ),

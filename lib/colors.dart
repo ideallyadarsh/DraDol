@@ -35,7 +35,7 @@ class _ColorGameState extends State<ColorGame> {
         centerTitle: true,
         title:Row(
             mainAxisSize: MainAxisSize.min, children: [
-          IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home())),),
+          IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pop(context),),
           SizedBox(width: 10,),
           Text("Color Match ",style: TextStyle(color: Colors.white),),]),
       ),
@@ -150,14 +150,15 @@ dialogue(BuildContext context){
       context: context,builder: (BuildContext context){
     return AlertDialog(
       title: Text("Score=10/10",textAlign: TextAlign.center,),
-
+      actionsPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      elevation: 2,
       actions: [
         Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
                Image.asset("assets/success.gif"),
               FlatButton(color: Colors.pink,child: Text("Next ColorGame"),
-                  onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+                  onPressed: (){Navigator.pop(context);
                   Navigator.pop(context);})
             ],
           ),

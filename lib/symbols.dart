@@ -40,7 +40,7 @@ class _SymbolsState extends State<Symbols> {
         title: Row(mainAxisSize: MainAxisSize.min, children: [
           IconButton(
             icon: Icon(Icons.home,size: 30,),
-            onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home())),),
+            onPressed: () => Navigator.pop(context),),
           SizedBox(width: 10,),
           Text("Symbol Match ", style: TextStyle(color: Colors.white),),
         ]),
@@ -166,10 +166,9 @@ class _SymbolsState extends State<Symbols> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text(
-              "Score=10/10",
-              textAlign: TextAlign.center,
-            ),
+            title: Text("Score=10/10", textAlign: TextAlign.center,),
+            actionsPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+            elevation: 2,
             actions: [
                  Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -178,8 +177,9 @@ class _SymbolsState extends State<Symbols> {
                     FlatButton(
                         color: Colors.pink,
                         child: Text("Next Level"),
-                        onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
-                        Navigator.pop(context);}
+                        onPressed: (){
+                          Navigator.pop(context);
+                          Navigator.pop(context);}
                     ),
                   ],
                 ),

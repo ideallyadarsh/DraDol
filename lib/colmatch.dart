@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
+import 'animations/pageAnimation.dart';
 import 'home.dart';
 
 class Game extends StatefulWidget {
@@ -35,7 +36,7 @@ class _GameState extends State<Game> {
         centerTitle: true,
         title:Row(
             mainAxisSize: MainAxisSize.min, children: [
-          IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home())),),
+          IconButton(icon: Icon(Icons.home),onPressed: ()=>Navigator.pop(context),),
           SizedBox(width: 10,),
           Text("Color Match ",style: TextStyle(color: Colors.white),),]),
       ),      body:SingleChildScrollView(
@@ -151,14 +152,18 @@ class Emoji extends StatelessWidget {
     context: context,builder: (BuildContext context){
       return AlertDialog(
         title: Text("Score=10/10",textAlign: TextAlign.center,),
+        actionsPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+        elevation: 2,
         actions: [
           Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Center(child: Image.asset("assets/success.gif")),
                 FlatButton(color: Colors.pink,child: Text("Next Game"),
-                  onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
-                Navigator.pop(context);}
+                  onPressed: (){
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                }
 
                 )
               ],
