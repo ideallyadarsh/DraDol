@@ -11,7 +11,7 @@ With very simple yet fun UI specially designed to make the learning more interac
 
 <img src="https://i.ibb.co/tDTsQjg/tia2908787525074186236.png" alt="Screenshot-20210624-194555" width="300">
 
-### Choose From List of Variety of Games
+### Choose From Variety of Games
 
 <img src="https://i.ibb.co/stYhzVn/tia6079132024785985089.png" alt="Screenshot-20210624-194308" border="0" width="300">
 <img src="https://i.ibb.co/L9V95vz/tia8201395526288377566.png" alt="Screenshot-20210624-194330" border="0" width="300">
